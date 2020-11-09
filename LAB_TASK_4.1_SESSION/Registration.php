@@ -1,6 +1,9 @@
 <?php
 include_once('header.html');
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +12,7 @@ include_once('header.html');
     <title>Registration</title>
 </head>
 <body>
-    <form action="">
+    <form method='POST' action="registrationcheck.php">
         <fieldset>
             <legend>Registration</legend>
             <table>
@@ -57,12 +60,27 @@ include_once('header.html');
                         <input type="submit" name="submit" id="">
                         <button type="reset">Reset</button>
                     </td>
-                </tr>               
+
+                </tr>
+                
             </table>
         </fieldset>
     </form>
 </body>
 </html>
+
 <?php
+
+    if(isset($_GET['msg']))
+    {
+        if($_GET['msg']=='wrong_data')
+        {
+            echo "<h1>Please fill out the form.<h1>";
+        }
+    }
+?>
+
+<?php
+
     include_once('footer.html');
 ?>
